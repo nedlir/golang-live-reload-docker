@@ -1,31 +1,13 @@
-## Build image
+## Build and run image with docker compose
+
+windows:
 
 ```
-docker build -t my-go-app .
+docker-compose up
 ```
 
-## Run container
-
-the change between the commands differs in how the working directory is printed in each terminal emulator
-
-### Linux / macOS (Bash):
+Linux:
 
 ```
-docker run -p 8080:8080 --rm -v "$(pwd):/app" -v go-app-tmp:/app/tmp --name go-app-dev my-go-app
+sudo docker compose up
 ```
-
-### Powershell:
-
-```
-docker run -p 8080:8080 --rm -v "${PWD}:/app" -v go-app-tmp:/app/tmp --name go-app-dev my-go-app
-```
-
-### CMD:
-
-```
-docker run -p 8080:8080 --rm -v "%cd%:/app" -v go-app-tmp:/app/tmp --name go-app-dev my-go-app
-```
-
----
-
-That's it. 😎
