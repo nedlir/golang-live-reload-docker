@@ -11,3 +11,7 @@ Linux:
 ```
 sudo docker compose up
 ```
+
+## demo
+
+![Demo](demonstration.gif)
