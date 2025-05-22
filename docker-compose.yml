@@ -1,0 +1,17 @@
+services:
+  go-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: go-app-dev
+    ports:
+      - "6565:6565"
+    volumes:
+      - ./:/app
+      - go-app-tmp:/app/tmp
+    command: ["air", "-c", ".air.toml"]
+    environment:
+      - AIR_ENV=dev
+
+volumes:
+  go-app-tmp:
